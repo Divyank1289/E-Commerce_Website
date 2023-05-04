@@ -1,0 +1,21 @@
+extends layouts/main-layout.pug
+block styles
+    link(rel="stylesheet", href="/css/product.css")
+block content
+    main  
+        if prod.length>0 
+            .grid
+                each product in prod
+                    article.card.product-items
+                        header.card__header
+                            h1.product__title #{product.title}
+                        div.card__image
+                            img(src="https://www.iloveindia.com/indian-heroes/pics/great-gandhi.jpg", alt="A book")
+                        div.card__content
+                            h2.product___price $1
+                            p.product__description only 1 time offer
+                        .card__actions
+                            button.btn Add to Cart
+        else 
+            h1 NO Products!!!!
+
